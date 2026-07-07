@@ -1,23 +1,298 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>고객 이용 안내</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #f4f5f7;
+      color: #222;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #202938, #3f4f66);
+      color: white;
+      padding: 28px 22px;
+      border-radius: 22px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 26px;
+      line-height: 1.3;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .notice {
+      background: #fff8e6;
+      border: 1px solid #f1d28a;
+      color: #5a4300;
+      padding: 14px 16px;
+      border-radius: 14px;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      margin: 26px 0 12px;
+      font-weight: 700;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .menu-card {
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .menu-card span {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .faq-box {
+      background: white;
+      border-radius: 18px;
+      padding: 8px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+    }
+
+    details {
+      border-bottom: 1px solid #eeeeee;
+      padding: 0;
+    }
+
+    details:last-child {
+      border-bottom: none;
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 14px;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 1.5;
+      position: relative;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 14px;
+      top: 18px;
+      font-size: 20px;
+      color: #777;
+    }
+
+    details[open] summary::after {
+      content: "-";
+    }
+
+    details p {
+      margin: 0;
+      padding: 0 14px 18px;
+      color: #444;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .footer {
+      margin-top: 24px;
+      padding: 18px;
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      color: #555;
+      font-size: 14px;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .front {
+      font-weight: 700;
+      color: #222;
+    }
+
+    @media (max-width: 480px) {
+      .page {
+        padding: 16px;
+      }
+
+      .hero h1 {
+        font-size: 23px;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>고객 이용 안내</h1>
-  <p>호텔 이용 중 자주 문의하시는 내용을 안내드립니다.</p>
+  <main class="page">
+    <section class="hero">
+      <h1>고객 이용 안내</h1>
+      <p>
+        호텔 이용 중 자주 문의하시는 내용을 안내드립니다.<br>
+        궁금하신 항목을 선택해 확인해 주세요.
+      </p>
+    </section>
 
-  <h2>자주 묻는 질문</h2>
+    <div class="notice">
+      안내 내용은 호텔 운영 상황에 따라 변경될 수 있습니다.
+      정확한 확인이 필요한 경우 프런트로 문의해 주세요.
+    </div>
 
-  <h3>체크아웃 연장이 가능한가요?</h3>
-  <p>체크아웃 연장은 당일 객실 상황에 따라 가능 여부가 달라집니다. 이용을 원하실 경우 프런트로 문의해 주세요.</p>
+    <h2 class="section-title">안내 카테고리</h2>
 
-  <h3>짐 보관이 가능한가요?</h3>
-  <p>체크인 전 또는 체크아웃 후 짐 보관이 가능합니다. 프런트로 문의해 주세요.</p>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <span>❓</span>
+        자주 묻는 질문
+      </div>
+      <div class="menu-card">
+        <span>🍽</span>
+        조식 안내
+      </div>
+      <div class="menu-card">
+        <span>🧳</span>
+        대여물품 안내
+      </div>
+      <div class="menu-card">
+        <span>🚗</span>
+        주차 / 교통 안내
+      </div>
+      <div class="menu-card">
+        <span>📍</span>
+        주변 편의시설
+      </div>
+      <div class="menu-card">
+        <span>☎️</span>
+        프런트 문의
+      </div>
+    </div>
 
-  <h3>대여 가능한 물품은 무엇인가요?</h3>
-  <p>충전기, 어댑터, 와인 오프너 등 일부 물품 대여가 가능합니다. 수량이 한정되어 있어 조기 소진될 수 있습니다.</p>
+    <h2 class="section-title">자주 묻는 질문</h2>
+
+    <section class="faq-box">
+      <details>
+        <summary>체크아웃 연장이 가능한가요?</summary>
+        <p>
+          체크아웃 연장은 당일 객실 상황에 따라 가능 여부가 달라집니다.
+          이용을 원하실 경우 프런트로 문의해 주세요.
+        </p>
+      </details>
+
+      <details>
+        <summary>짐 보관이 가능한가요?</summary>
+        <p>
+          체크인 전 또는 체크아웃 후 짐 보관이 가능합니다.
+          자세한 사항은 프런트로 문의해 주세요.
+        </p>
+      </details>
+
+      <details>
+        <summary>대여 가능한 물품은 무엇인가요?</summary>
+        <p>
+          충전기, 어댑터, 와인 오프너 등 일부 물품 대여가 가능합니다.
+          단, 수량이 한정되어 있어 조기 소진될 수 있습니다.
+        </p>
+      </details>
+
+      <details>
+        <summary>수건이나 생수 추가 요청이 가능한가요?</summary>
+        <p>
+          추가 요청은 프런트로 문의해 주세요.
+          호텔 운영 기준에 따라 제공 여부가 달라질 수 있습니다.
+        </p>
+      </details>
+
+      <details>
+        <summary>배달음식은 어디서 받을 수 있나요?</summary>
+        <p>
+          배달음식은 로비 또는 호텔에서 안내하는 지정 장소에서
+          고객님께서 직접 수령해 주세요.
+        </p>
+      </details>
+
+      <details>
+        <summary>택시 호출이 가능한가요?</summary>
+        <p>
+          프런트에 요청하시면 택시 호출을 도와드릴 수 있습니다.
+          단, 시간대와 교통 상황에 따라 대기 시간이 발생할 수 있습니다.
+        </p>
+      </details>
+
+      <details>
+        <summary>조식권은 언제까지 구매 가능한가요?</summary>
+        <p>
+          조식권 구매 가능 시간은 호텔 운영 상황에 따라 달라질 수 있습니다.
+          이용을 원하실 경우 프런트로 문의해 주세요.
+        </p>
+      </details>
+
+      <details>
+        <summary>주차 등록은 어떻게 하나요?</summary>
+        <p>
+          주차 이용 시 차량번호를 프런트에 말씀해 주세요.
+          주차 가능 여부 및 이용 기준은 호텔 운영 상황에 따라 달라질 수 있습니다.
+        </p>
+      </details>
+
+      <details>
+        <summary>분실물 문의는 어떻게 하나요?</summary>
+        <p>
+          분실물은 프런트로 문의해 주세요.
+          객실 및 공용 공간 확인 후 보관 여부를 안내해 드립니다.
+        </p>
+      </details>
+    </section>
+
+    <footer class="footer">
+      추가 문의사항은 <span class="front">프런트</span>로 문의해 주세요.<br>
+      이용해 주셔서 감사합니다.
+    </footer>
+  </main>
 </body>
 </html>
