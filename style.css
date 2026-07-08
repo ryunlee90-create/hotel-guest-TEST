@@ -1357,3 +1357,59 @@ body.search-open {
     font-size: 13px;
   }
 }
+/* Restaurant Inner Filter 5 Columns Override */
+
+.restaurant-filters {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #d8d0c2;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(23, 32, 43, 0.045);
+}
+
+.restaurant-filter {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  margin: 0;
+  padding: 0 6px;
+  border: none;
+  border-right: 1px solid #eee7dd;
+  border-radius: 0;
+  background: #fff;
+  color: #1e252f;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: none;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.restaurant-filter:last-child {
+  border-right: none;
+}
+
+.restaurant-filter.is-active {
+  background: #17202b;
+  color: #fff;
+}
+
+@media (max-width: 520px) {
+  .restaurant-filter {
+    min-height: 43px;
+    padding: 0 4px;
+    font-size: 13px;
+    letter-spacing: -0.5px;
+  }
+}
