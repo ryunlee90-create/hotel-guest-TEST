@@ -1272,3 +1272,70 @@ body.search-open {
     font-size: 20px;
   }
 }
+/* Index Font Size Adjustment */
+
+.main-hero .kicker {
+  font-size: 11px;
+}
+
+.main-hero h1 {
+  font-size: 34px;
+  line-height: 1.18;
+}
+
+.main-hero p {
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.quick-title span {
+  font-size: 10px;
+}
+
+.quick-card h3 {
+  font-size: 18px;
+}
+
+.quick-card p {
+  font-size: 13px;
+}
+
+.menu-card-title {
+  font-size: 19px;
+}
+
+.menu-card-desc {
+  font-size: 13px;
+}
+
+@media (max-width: 520px) {
+  .main-hero .kicker {
+    font-size: 10px;
+  }
+
+  .main-hero h1 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .main-hero p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .quick-card h3 {
+    font-size: 17px;
+  }
+
+  .quick-card p {
+    font-size: 12px;
+  }
+
+  .menu-card-title {
+    font-size: 18px;
+  }
+
+  .menu-card-desc {
+    font-size: 12px;
+  }
+}
