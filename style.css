@@ -378,8 +378,6 @@ a {
 
 /* Directory */
 
-/* Main Directory Card */
-
 #directory-menu {
   background: #fff;
   border: 1px solid #d8d0c2;
@@ -1260,90 +1258,8 @@ body.search-open {
     min-height: 43px;
   }
 }
+
 /* Restaurant Inner Filters */
-
-.restaurant-filter-wrap {
-  margin-bottom: 14px;
-}
-
-.restaurant-filter-label {
-  margin: 0 2px 9px;
-  font-size: 10px;
-  letter-spacing: 2.4px;
-  color: #a18045;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.restaurant-filters {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding: 2px 2px 4px;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.restaurant-filters::-webkit-scrollbar {
-  display: none;
-}
-
-.restaurant-filter {
-  flex: 0 0 auto;
-  min-height: 38px;
-  padding: 0 15px;
-  border: 1px solid #d8d0c2;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.78);
-  color: #5f564a;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: -0.2px;
-  cursor: pointer;
-  white-space: nowrap;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.72),
-    0 6px 14px rgba(23, 32, 43, 0.04);
-  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
-}
-
-.restaurant-filter.is-active {
-  background: #17202b;
-  border-color: #17202b;
-  color: #fff;
-}
-
-.restaurant-filter:active {
-  transform: scale(0.98);
-}
-
-.nearby-card[hidden] {
-  display: none;
-}
-
-@media (max-width: 520px) {
-  .restaurant-filter-wrap {
-    margin-bottom: 13px;
-  }
-
-  .restaurant-filter-label {
-    margin-bottom: 8px;
-    font-size: 10px;
-    letter-spacing: 2.2px;
-  }
-
-  .restaurant-filters {
-    gap: 7px;
-    padding-bottom: 4px;
-  }
-
-  .restaurant-filter {
-    min-height: 37px;
-    padding: 0 14px;
-    font-size: 13px;
-  }
-}
-/* Restaurant Inner Filter Final Override */
 
 .restaurant-filter-wrap {
   margin: 0 0 15px;
@@ -1357,6 +1273,7 @@ body.search-open {
   color: #a18045;
   font-weight: 800;
   text-transform: uppercase;
+  line-height: 1.2;
 }
 
 .restaurant-filters {
@@ -1381,20 +1298,24 @@ body.search-open {
   appearance: none;
   -webkit-appearance: none;
   flex: 0 0 auto;
-  min-width: 82px;
+  min-width: 78px;
   min-height: 44px;
   margin: 0;
-  padding: 0 14px;
+  padding: 0 13px;
   border: none;
   border-right: 1px solid #eee7dd;
   border-radius: 0;
   background: #fff;
   color: #1e252f;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 800;
   letter-spacing: -0.3px;
+  line-height: 1;
   cursor: pointer;
   white-space: nowrap;
+  box-shadow: none;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
 }
 
 .restaurant-filter:last-child {
@@ -1410,12 +1331,8 @@ body.search-open {
   transform: scale(0.98);
 }
 
-/* Restaurant Card Button Balance */
-
-.nearby-button {
-  width: 100%;
-  min-height: 44px;
-  border-radius: 14px;
+.nearby-card[hidden] {
+  display: none;
 }
 
 @media (max-width: 520px) {
@@ -1425,6 +1342,8 @@ body.search-open {
 
   .restaurant-filter-label {
     margin-bottom: 8px;
+    font-size: 10px;
+    letter-spacing: 2.2px;
   }
 
   .restaurant-filters {
@@ -1432,9 +1351,9 @@ body.search-open {
   }
 
   .restaurant-filter {
-    min-width: 78px;
+    min-width: 72px;
     min-height: 43px;
-    padding: 0 13px;
+    padding: 0 12px;
     font-size: 13px;
   }
 }
