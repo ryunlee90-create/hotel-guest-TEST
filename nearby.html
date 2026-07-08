@@ -97,9 +97,61 @@
       </div>
 
       <div class="nearby-panel is-active" id="nearby-restaurant" role="tabpanel" data-nearby-panel="restaurant">
+
+        <div class="restaurant-filter-wrap">
+          <div class="restaurant-filter-label">식당 분류</div>
+
+          <div class="restaurant-filters" role="tablist" aria-label="식당 분류">
+            <button
+              class="restaurant-filter is-active"
+              type="button"
+              data-restaurant-filter="all"
+              aria-selected="true"
+            >
+              전체
+            </button>
+
+            <button
+              class="restaurant-filter"
+              type="button"
+              data-restaurant-filter="pork"
+              aria-selected="false"
+            >
+              흑돼지
+            </button>
+
+            <button
+              class="restaurant-filter"
+              type="button"
+              data-restaurant-filter="galchi"
+              aria-selected="false"
+            >
+              갈치
+            </button>
+
+            <button
+              class="restaurant-filter"
+              type="button"
+              data-restaurant-filter="sashimi"
+              aria-selected="false"
+            >
+              회
+            </button>
+
+            <button
+              class="restaurant-filter"
+              type="button"
+              data-restaurant-filter="local"
+              aria-selected="false"
+            >
+              향토음식
+            </button>
+          </div>
+        </div>
+
         <div class="nearby-list">
 
-          <article class="nearby-card">
+          <article class="nearby-card" data-restaurant-category="pork">
             <div class="nearby-card-head">
               <div>
                 <div class="nearby-category">Restaurant</div>
@@ -109,7 +161,7 @@
             </div>
 
             <p>
-              음식 분류 · 대표 메뉴 입력
+              흑돼지 · 대표 메뉴 입력
             </p>
 
             <a class="nearby-button" href="#" target="_blank" rel="noopener">
@@ -117,7 +169,7 @@
             </a>
           </article>
 
-          <article class="nearby-card">
+          <article class="nearby-card" data-restaurant-category="galchi">
             <div class="nearby-card-head">
               <div>
                 <div class="nearby-category">Restaurant</div>
@@ -127,7 +179,7 @@
             </div>
 
             <p>
-              음식 분류 · 대표 메뉴 입력
+              갈치 · 갈치조림 · 갈치구이
             </p>
 
             <a class="nearby-button" href="#" target="_blank" rel="noopener">
@@ -135,7 +187,7 @@
             </a>
           </article>
 
-          <article class="nearby-card">
+          <article class="nearby-card" data-restaurant-category="sashimi">
             <div class="nearby-card-head">
               <div>
                 <div class="nearby-category">Restaurant</div>
@@ -145,7 +197,25 @@
             </div>
 
             <p>
-              음식 분류 · 대표 메뉴 입력
+              회 · 해산물
+            </p>
+
+            <a class="nearby-button" href="#" target="_blank" rel="noopener">
+              지도 보기
+            </a>
+          </article>
+
+          <article class="nearby-card" data-restaurant-category="local">
+            <div class="nearby-card-head">
+              <div>
+                <div class="nearby-category">Restaurant</div>
+                <h3>상호명 입력</h3>
+              </div>
+              <span class="nearby-distance">차량 약 00분</span>
+            </div>
+
+            <p>
+              향토음식 · 대표 메뉴 입력
             </p>
 
             <a class="nearby-button" href="#" target="_blank" rel="noopener">
@@ -154,7 +224,14 @@
           </article>
 
           <!-- 실제 식당 추가 시 아래 형식을 복사해서 사용하세요.
-          <article class="nearby-card">
+          data-restaurant-category 값은 아래 중 하나를 사용하면 됩니다.
+
+          흑돼지: pork
+          갈치: galchi
+          회: sashimi
+          향토음식: local
+
+          <article class="nearby-card" data-restaurant-category="pork">
             <div class="nearby-card-head">
               <div>
                 <div class="nearby-category">Restaurant</div>
@@ -313,6 +390,39 @@
         window.dataLayer.push({
           event: 'nearby_tab_click',
           nearby_tab: target
+        });
+      });
+    });
+
+    const restaurantFilters = document.querySelectorAll('.restaurant-filter');
+    const restaurantCards = document.querySelectorAll('[data-restaurant-category]');
+
+    restaurantFilters.forEach(function(filter) {
+      filter.addEventListener('click', function() {
+        const target = filter.dataset.restaurantFilter;
+
+        restaurantFilters.forEach(function(item) {
+          item.classList.remove('is-active');
+          item.setAttribute('aria-selected', 'false');
+        });
+
+        filter.classList.add('is-active');
+        filter.setAttribute('aria-selected', 'true');
+
+        restaurantCards.forEach(function(card) {
+          const category = card.dataset.restaurantCategory;
+
+          if (target === 'all' || category === target) {
+            card.hidden = false;
+          } else {
+            card.hidden = true;
+          }
+        });
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'restaurant_filter_click',
+          restaurant_filter: target
         });
       });
     });
