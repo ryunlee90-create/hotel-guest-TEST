@@ -206,94 +206,109 @@
         data-stay-panel="dining"
         hidden
       >
-        <section class="section" id="breakfast">
-          <div class="section-header">
-            <span class="section-label">Breakfast</span>
-            <h2 class="section-title">조식 안내</h2>
-            <p class="section-desc">
-              조식 이용 시간과 구매 기준을 확인해 주세요.
-            </p>
-          </div>
+        <div class="dining-tabs" role="tablist" aria-label="다이닝 안내 분류">
+          <button class="dining-tab is-active" type="button" data-dining-tab="breakfast">
+            조식당
+          </button>
 
-          <div class="info-table">
-            <div class="info-row">
-              <div class="info-label">이용 시간</div>
-              <div class="info-value">07:00 ~ 10:00</div>
+          <button class="dining-tab" type="button" data-dining-tab="cafe">
+            오름카페
+          </button>
+        </div>
+
+        <div class="dining-panel is-active" data-dining-panel="breakfast">
+          <section class="section" id="breakfast">
+            <div class="section-header">
+              <span class="section-label">Breakfast</span>
+              <h2 class="section-title">조식 안내</h2>
+              <p class="section-desc">
+                조식 이용 시간과 구매 기준을 확인해 주세요.
+              </p>
             </div>
 
-            <div class="info-row">
-              <div class="info-label">입장 마감</div>
-              <div class="info-value">09:30</div>
-            </div>
+            <div class="info-table">
+              <div class="info-row">
+                <div class="info-label">이용 시간</div>
+                <div class="info-value">07:00 ~ 10:00</div>
+              </div>
 
-            <div class="info-row">
-              <div class="info-label">장소</div>
-              <div class="info-value">A동 1층</div>
-            </div>
+              <div class="info-row">
+                <div class="info-label">입장 마감</div>
+                <div class="info-value">09:30</div>
+              </div>
 
-            <div class="info-row">
-              <div class="info-label">사전 구매</div>
-              <div class="info-value">전날 23:30까지</div>
-            </div>
+              <div class="info-row">
+                <div class="info-label">장소</div>
+                <div class="info-value">A동 1층</div>
+              </div>
 
-            <div class="info-row">
-              <div class="info-label">당일 구매</div>
-              <div class="info-value">당일 09:20까지</div>
-            </div>
+              <div class="info-row">
+                <div class="info-label">사전 구매</div>
+                <div class="info-value">전날 23:30까지</div>
+              </div>
 
-            <div class="info-row">
-              <div class="info-label">금액</div>
-              <div class="info-value">
-                성인 사전 구매 15,000원 / 당일 구매 17,600원<br>
-                소인 12,100원
+              <div class="info-row">
+                <div class="info-label">당일 구매</div>
+                <div class="info-value">당일 09:20까지</div>
+              </div>
+
+              <div class="info-row">
+                <div class="info-label">금액</div>
+                <div class="info-value">
+                  성인 사전 구매 15,000원 / 당일 구매 17,600원<br>
+                  소인 12,100원
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="sub-note">
-            사전 할인가로 구매한 조식권은 환불이 어렵습니다.
-          </div>
-        </section>
+            <div class="sub-note">
+              사전 할인가로 구매한 조식권은 환불이 어렵습니다.
+            </div>
+          </section>
+        </div>
 
-        <section class="section" id="cafe">
-          <div class="section-header">
-            <span class="section-label">Dining & Cafe</span>
-            <h2 class="section-title">오름카페 안내</h2>
-            <p class="section-desc">
-              운영시간과 휴일여부를 확인해주세요.
-            </p>
-          </div>
-
-          <div class="info-table">
-            <div class="info-row">
-              <div class="info-label">이용 시간</div>
-              <div class="info-value">11:00 ~ 21:00</div>
-            </div>  
-            
-            <div class="info-row">
-              <div class="info-label">라스트오더</div>
-              <div class="info-value">20:30</div>
-            </div>  
-
-            <div class="info-row">
-              <div class="info-label">장소</div>
-              <div class="info-value">A동 로비층</div>
-            </div> 
-            
-            <div class="info-row">
-              <div class="info-label">메뉴 안내</div>
-              <div class="info-value">텍사스 스타일 BBQ</div>
+        <div class="dining-panel" data-dining-panel="cafe" hidden>
+          <section class="section" id="cafe">
+            <div class="section-header">
+              <span class="section-label">Orum Cafe</span>
+              <h2 class="section-title">오름카페 안내</h2>
+              <p class="section-desc">
+                운영 시간과 메뉴 정보를 확인해 주세요.
+              </p>
             </div>
 
-            <div class="info-row">
-              <div class="info-label">전화번호</div>
-              <div class="info-value">
-                <a href="tel:06490119999">064-901-1999</a>
-              </div>             
+            <div class="info-table">
+              <div class="info-row">
+                <div class="info-label">이용 시간</div>
+                <div class="info-value">11:00 ~ 21:00</div>
+              </div>
+
+              <div class="info-row">
+                <div class="info-label">라스트오더</div>
+                <div class="info-value">20:30</div>
+              </div>
+
+              <div class="info-row">
+                <div class="info-label">장소</div>
+                <div class="info-value">A동 로비층</div>
+              </div>
+
+              <div class="info-row">
+                <div class="info-label">메뉴 안내</div>
+                <div class="info-value">텍사스 스타일 BBQ</div>
+              </div>
+
+              <div class="info-row">
+                <div class="info-label">전화번호</div>
+                <div class="info-value">
+                  <a href="tel:0649011999">064-901-1999</a>
+                </div>
+              </div>
             </div>
-        </section>
+          </section>
+        </div>
       </div>
-
+      
       <div
         class="stay-panel"
         id="stay-panel-parking"
