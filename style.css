@@ -1339,3 +1339,70 @@ body.search-open {
     font-size: 12px;
   }
 }
+/* Dining Inner Tabs */
+
+.dining-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  margin: 0 0 14px;
+  background: #fff;
+  border: 1px solid #d8d0c2;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(23, 32, 43, 0.055);
+}
+
+.dining-tab {
+  min-height: 52px;
+  border: none;
+  border-right: 1px solid #eee7dd;
+  background: #fff;
+  color: #1e252f;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.dining-tab:last-child {
+  border-right: none;
+}
+
+.dining-tab.is-active {
+  background: #17202b;
+  color: #fff;
+}
+
+.dining-tab:active {
+  transform: scale(0.98);
+}
+
+.dining-panel {
+  display: none;
+}
+
+.dining-panel.is-active {
+  display: block;
+}
+
+.dining-panel > .section:first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 520px) {
+  .dining-tabs {
+    margin-bottom: 13px;
+    border-radius: 16px;
+  }
+
+  .dining-tab {
+    min-height: 50px;
+    font-size: 15px;
+  }
+}
